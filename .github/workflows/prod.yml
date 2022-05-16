@@ -4,7 +4,8 @@ name: Python application test with Github Actions
 on:
   push:
     branches:
-      - main
+      - production
+
 jobs:
   build:
     runs-on: ubuntu-latest
