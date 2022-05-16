@@ -1,7 +1,10 @@
 name: Python application test with Github Actions
 
-on: [push]
-
+# Controls when the workflow will run
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
