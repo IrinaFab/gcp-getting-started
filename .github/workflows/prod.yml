@@ -4,7 +4,7 @@ name: Python application test with Github Actions
 on:
   push:
     branches:
-      - production
+      - prod
 
 jobs:
   build:
