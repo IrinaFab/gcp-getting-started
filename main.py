@@ -1,10 +1,11 @@
+# import dash
+# import dash_core_components as dcc
+# import dash_html_components as html
+
 import dash
 from dash import Dash, dcc, html
-import google.cloud 
-import biqquery
-import pandas as pd
-import plotply
-import plotply. express as px
+from google.cloud import bigquery
+import plotly.express as px
 
 app=dash.Dash(__name__)
 server=app.server
@@ -24,7 +25,7 @@ fig = px.line(df, x='time_series_timestamp', y = 'time_series_data')
 
 app.layout = html.Div(children = [
     html.H1("Covid-19 cases forecast"),
-    html.Div(children = '''An app to forecast Covid-19 cases in Romania''')
+    html.Div(children = '''An app to forecast Covid-19 cases in Romania'''),
     dcc.Graph(
         id='Covid-19 cases forecast',
         figure=fig
