@@ -8,7 +8,7 @@ import plotply. express as px
 
 app=dash.Dash(__name__)
 server=app.server
-clinet = bigquery.Client(
+client = bigquery.Client()
 
 query = """
     SELECT * FROM
