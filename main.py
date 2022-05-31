@@ -2,7 +2,7 @@ import dash
 from dash import Dash, dcc, html
 import google.cloud 
 import biqquery
-import pandas as import pd
+import pandas as pd
 import plotply
 import plotply. express as px
 
@@ -20,13 +20,16 @@ query_job = client.query(query)
 
 df = query_job.to_dataframe()
 
-fig=px.line(df, x='time_series_timestamp', y= 'time_series_data')
+fig = px.line(df, x='time_series_timestamp', y = 'time_series_data')
 
-app.layout = html.Div(case = [
+app.layout = html.Div(children = [
     html.H1("Covid-19 cases forecast"),
-    html.Div(cases = '''An app to forecast Covid-19 cases in Romania''')
+    html.Div(children = '''An app to forecast Covid-19 cases in Romania''')
     dcc.Graph(
-        id='Cpvid-19 cases forecast',
+        id='Covid-19 cases forecast',
         figure=fig
     )
 ])
+
+if __name__ == '__main__':
+    app.run_server(debug=True, host="0.0.0.0", port=8080)
